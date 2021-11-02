@@ -6,6 +6,7 @@ using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
+
 public class EnemyAgent : Agent
 {
     [Header("Agents attributes")]
@@ -21,15 +22,11 @@ public class EnemyAgent : Agent
     /// <summary>
     /// Rigidbody of the agent
     /// </summary>
-    new private Rigidbody rb;
+    private Rigidbody rb;
+    
+    
 
-    private float smoothTurn = 0f;
-
-    //Attack distance
-    private const float attackDistance = .2f;
-
-    //Wheter the Agent is 'attacking'
-    private bool attacking = false;
+    
 
     public override void Initialize()
     {
@@ -47,13 +44,13 @@ public class EnemyAgent : Agent
     public override void OnActionReceived(ActionBuffers actions)
     {
         // Actions, size = 2
-        Vector3 controlSignal = Vector3.zero;
-        controlSignal.x = actions.ContinuousActions[0];
-        controlSignal.z = actions.ContinuousActions[1];
-        rb.AddForce(controlSignal * MovementForce);
+       
 
-        //will it works?
-        transform.LookAt(transform.localPosition+rb.velocity.normalized, Vector3.up);
+        float horInput = actions.ContinuousActions[0] * Time.fixedDeltaTime * 100;
+        float vertInput = actions.ContinuousActions[1] * Time.deltaTime * 10;
+        rb.MoveRotation(Quaternion.Euler(0, horInput, 0) * rb.rotation);
+        if (vertInput != 0) rb.MovePosition(transform.position + transform.forward.normalized * vertInput);
+
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -61,8 +58,8 @@ public class EnemyAgent : Agent
         sensor.AddObservation(transform.localPosition); //3 obs
 
        
-        sensor.AddObservation(rb.velocity.x); //3 obs
-        sensor.AddObservation(rb.velocity.z); //3 obs
+        sensor.AddObservation(rb.velocity.x); //1 obs
+        sensor.AddObservation(rb.velocity.z); //1 obs
 
     }
 

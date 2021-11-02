@@ -32,7 +32,7 @@ public class CircleInstantiator : MonoBehaviour
     public bool Start = true;
     public bool Clear = false;
 
-    new private List<GameObject> activePrefabs;
+    private List<GameObject> activePrefabs = new List<GameObject>();
 
 
 
@@ -72,7 +72,7 @@ public class CircleInstantiator : MonoBehaviour
     private Vector3 GetCirclePosition()
     {
         //Refactor
-        return new Vector3(UnityEngine.Random.insideUnitCircle.x * R, 0, UnityEngine.Random.insideUnitCircle.y * R);
+        return new Vector3(UnityEngine.Random.insideUnitCircle.x * R, transform.position.y, UnityEngine.Random.insideUnitCircle.y * R);
     }
 
     private Quaternion GetRandomRotation(bool x, bool y, bool z, float minRotation = 0f, float maxRotation = 360f)
