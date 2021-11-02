@@ -29,10 +29,10 @@ public class CircleInstantiator : MonoBehaviour
 
     [Header("Controls")]
 
-    public bool Start = false;
+    public bool Start = true;
     public bool Clear = false;
 
-    private List<GameObject> activePrefabs;
+    new private List<GameObject> activePrefabs;
 
 
 
