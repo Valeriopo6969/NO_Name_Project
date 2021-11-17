@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
+    public Animator Animator;    
+    public float VSpeed;
+    public KeyCode ModifierKey;
+    public float rotationBoost = 1;
+
+    float modVal = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +21,17 @@ public class Controller : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void FixedUpdate()
+    {
+        var x = Input.GetAxis("Horizontal");
+        var z = Input.GetAxis("Vertical");
+
+        if (Input.GetKey(ModifierKey))
+            modVal = 2f;
+
+        Animator.SetFloat("Speed", z * modVal * VSpeed);
+        transform.Rotate(0, x * rotationBoost, 0);
     }
 }
