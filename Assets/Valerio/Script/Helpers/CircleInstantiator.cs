@@ -72,7 +72,10 @@ public class CircleInstantiator : MonoBehaviour
     private Vector3 GetCirclePosition()
     {
         //Refactor
-        return new Vector3(UnityEngine.Random.insideUnitCircle.x * R, transform.position.y, UnityEngine.Random.insideUnitCircle.y * R);
+        Vector2 rand = UnityEngine.Random.insideUnitCircle;
+        return new Vector3(rand.x * R, transform.localPosition.y, rand.y * R);
+        
+        
     }
 
     private Quaternion GetRandomRotation(bool x, bool y, bool z, float minRotation = 0f, float maxRotation = 360f)
@@ -102,7 +105,14 @@ public class CircleInstantiator : MonoBehaviour
         }
 
     }
-    
+
+    void OnDrawGizmosSelected()
+    {
+        // Draw a yellow sphere at the transform's position
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(Parent.position, R);
+    }
+
 
 
 

@@ -19,6 +19,7 @@ public class NPC : MonoBehaviour
        
         RandomizeSpeed();
         AssignNewTargetPosition(AreaCenter,Radius);
+        
     }
 
     private void Update()
@@ -27,7 +28,7 @@ public class NPC : MonoBehaviour
         
 
         
-        transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position,target.position, speed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position,target.position)<.2f)
         {
@@ -45,7 +46,8 @@ public class NPC : MonoBehaviour
 
     private void AssignNewTargetPosition(Transform center,float radius)
     {
-        target.position = center.position + new Vector3(UnityEngine.Random.insideUnitCircle.x, 0.0f, UnityEngine.Random.insideUnitCircle.y) * Radius;
+        Vector2 rand = UnityEngine.Random.insideUnitCircle;
+        target.position = center.position + new Vector3(rand.x, 0.0f, rand.y) * Radius;
         
     }
 

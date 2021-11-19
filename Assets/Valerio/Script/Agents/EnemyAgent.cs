@@ -20,6 +20,7 @@ public class EnemyAgent : Agent
     public Transform currentTarget;
     public Transform AreaCenter;
     public Transform body;
+    
     /// <summary>
     /// Rigidbody of the agent
     /// </summary>
@@ -32,6 +33,7 @@ public class EnemyAgent : Agent
     public override void Initialize()
     {
         rb = GetComponentInChildren<Rigidbody>();
+        
     }
 
     public override void OnEpisodeBegin()
@@ -39,7 +41,17 @@ public class EnemyAgent : Agent
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
 
-        MoveToSafeRandomPosition();
+        if (UnityEngine.Random.Range(0, 11) % 2 == 0)
+        {
+            transform.position = AreaCenter.position;
+            body.position = new Vector3(AreaCenter.position.x, AreaCenter.position.y + 0.8f, AreaCenter.position.z);
+        }
+        else
+        {
+            
+            body.position = new Vector3(currentTarget.position.x, 0.8f, currentTarget.position.z);
+        }
+        Debug.Log(body.position);
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -60,12 +72,25 @@ public class EnemyAgent : Agent
 
         body.rotation = Quaternion.Euler(0, yRotation, 0f);
         
+        if(Vector3.Distance(body.position,currentTarget.position)<5.5f)
+        {
+           //float bonus = .02f * Mathf.Clamp01(Vector3.Dot((transform.forward.normalized), -currentTarget.up.normalized));
+           AddReward(1f);
+           
+           Debug.DrawLine(body.position, currentTarget.position, Color.red);
+        }
+        else
+        {
+            Debug.DrawLine(body.position, currentTarget.position, Color.green);
+        }
+
+        
 
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        sensor.AddObservation(transform.localRotation.normalized); //4 obs
+        sensor.AddObservation(body.position.normalized); //4 obs
 
         Vector3 toTarget = currentTarget.position - noseTip.position;
         sensor.AddObservation(toTarget.normalized); //3 obs
@@ -123,28 +148,5 @@ public class EnemyAgent : Agent
         
         
     }
-    private void MoveToSafeRandomPosition()
-    {
-        bool safePositionFound = false;
-        int attemptsRemaining = 100;
-        Vector3 potentialPosition = Vector3.zero;
-        Quaternion potentialRotation = Quaternion.identity;
-
-        while (!safePositionFound && attemptsRemaining > 100)
-        {
-            attemptsRemaining--;
-            potentialPosition = AreaCenter.position + new Vector3(UnityEngine.Random.insideUnitCircle.x*10f,1f, UnityEngine.Random.insideUnitCircle.y*10f);
-            potentialRotation = Quaternion.Euler(0f, UnityEngine.Random.Range(-180f, 180f), 0f);
-
-            Collider[] colliders = Physics.OverlapSphere(potentialPosition, .5f);
-
-            safePositionFound = colliders.Length == 0;
-
-            Debug.Assert(safePositionFound, "Could not found a safe position to spawn");
-
-            transform.position = potentialPosition;
-            transform.rotation = potentialRotation;
-        }
-       
-    }
+    
 }
