@@ -5,8 +5,7 @@ using UnityEngine;
 public class PoolManager : MonoBehaviour
 {
     public GameObject BulletPrefab;
-    public int PoolSize = 10;
-    public Transform BulletsRoot;
+    public int PoolSize = 10;    
     public Queue<GameObject> BulletQueue = new Queue<GameObject>();
 
     // Start is called before the first frame update
@@ -16,7 +15,7 @@ public class PoolManager : MonoBehaviour
 
         for (int i = 0; i < PoolSize; i++)
         {
-            go = Instantiate(BulletPrefab, Vector3.zero, Quaternion.identity, BulletsRoot);
+            go = Instantiate(BulletPrefab, Vector3.zero, Quaternion.identity);
             BulletQueue.Enqueue(go);
             go.SetActive(false);
         }
