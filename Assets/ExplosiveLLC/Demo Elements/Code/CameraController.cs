@@ -21,7 +21,7 @@ namespace RPGCharacterAnims
 		{
 			offset = new Vector3(cameraTarget.transform.position.x, cameraTarget.transform.position.y + height, cameraTarget.transform.position.z - distance);
 			lastPosition = new Vector3(cameraTarget.transform.position.x, cameraTarget.transform.position.y + height, cameraTarget.transform.position.z - distance);
-			distance = 1;
+			distance = 1.2f;
 			height = 1;
 		}
 
