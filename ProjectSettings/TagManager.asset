@@ -38,6 +38,7 @@ TagManager:
   - switchOff
   - plus
   - switchOn
+  - Collide
   layers:
   - Default
   - TransparentFX
@@ -47,8 +48,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - TempCast
+  - Walkable
   - 
   - 
   - 
