@@ -1,0 +1,12 @@
+using UnityEngine;
+
+namespace FiniteStateMachine{
+[CreateAssetMenu (fileName = "New #SCRIPTNAME#", menuName = "StateMachine/Behaviours/#SCRIPTNAME#")]
+	public class #SCRIPTNAME#: State
+	{
+		#NOTRIM#	
+	}
+}
+	
+
+	
