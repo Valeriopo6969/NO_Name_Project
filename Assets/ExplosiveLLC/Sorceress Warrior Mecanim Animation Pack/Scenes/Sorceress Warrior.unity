@@ -312,72 +312,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 150160, guid: 3a555105d974c19488b7be673891a5d4, type: 3}
   m_PrefabInstance: {fileID: 921103940}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &890035672
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 910660656960127186, guid: 19241c63182d7eb4aa7b0def9422b53b, type: 3}
-      propertyPath: m_Name
-      value: Sorceress Warrior
-      objectReference: {fileID: 0}
-    - target: {fileID: 910660656960625906, guid: 19241c63182d7eb4aa7b0def9422b53b, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 910660656960625906, guid: 19241c63182d7eb4aa7b0def9422b53b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 910660656960625906, guid: 19241c63182d7eb4aa7b0def9422b53b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 910660656960625906, guid: 19241c63182d7eb4aa7b0def9422b53b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4
-      objectReference: {fileID: 0}
-    - target: {fileID: 910660656960625906, guid: 19241c63182d7eb4aa7b0def9422b53b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 910660656960625906, guid: 19241c63182d7eb4aa7b0def9422b53b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 910660656960625906, guid: 19241c63182d7eb4aa7b0def9422b53b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 910660656960625906, guid: 19241c63182d7eb4aa7b0def9422b53b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 910660656960625906, guid: 19241c63182d7eb4aa7b0def9422b53b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 910660656960625906, guid: 19241c63182d7eb4aa7b0def9422b53b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 910660656960625906, guid: 19241c63182d7eb4aa7b0def9422b53b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3605481177131726333, guid: 19241c63182d7eb4aa7b0def9422b53b, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 762544842}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 19241c63182d7eb4aa7b0def9422b53b, type: 3}
---- !u!1 &890035673 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 910660656960127186, guid: 19241c63182d7eb4aa7b0def9422b53b, type: 3}
-  m_PrefabInstance: {fileID: 890035672}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &921103940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -629,7 +563,7 @@ PrefabInstance:
     - target: {fileID: 11481238, guid: 16dc4b51d7b30f74a9fd33417596daa7, type: 3}
       propertyPath: cameraTarget
       value: 
-      objectReference: {fileID: 890035673}
+      objectReference: {fileID: 910660656741784842}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16dc4b51d7b30f74a9fd33417596daa7, type: 3}
 --- !u!1001 &1937749515
@@ -689,3 +623,69 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f3baa9064aae7f40bd0d245e26153fa, type: 3}
+--- !u!1 &910660656741784842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1412369634450489394, guid: e2a6398ab53c16f45929ec0ab90229ad, type: 3}
+  m_PrefabInstance: {fileID: 2250374545112096056}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2250374545112096056
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1412369634450489394, guid: e2a6398ab53c16f45929ec0ab90229ad, type: 3}
+      propertyPath: m_Name
+      value: Sorceress Warrior
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412369634450988050, guid: e2a6398ab53c16f45929ec0ab90229ad, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412369634450988050, guid: e2a6398ab53c16f45929ec0ab90229ad, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412369634450988050, guid: e2a6398ab53c16f45929ec0ab90229ad, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412369634450988050, guid: e2a6398ab53c16f45929ec0ab90229ad, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412369634450988050, guid: e2a6398ab53c16f45929ec0ab90229ad, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412369634450988050, guid: e2a6398ab53c16f45929ec0ab90229ad, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412369634450988050, guid: e2a6398ab53c16f45929ec0ab90229ad, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412369634450988050, guid: e2a6398ab53c16f45929ec0ab90229ad, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412369634450988050, guid: e2a6398ab53c16f45929ec0ab90229ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412369634450988050, guid: e2a6398ab53c16f45929ec0ab90229ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412369634450988050, guid: e2a6398ab53c16f45929ec0ab90229ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 762544842}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e2a6398ab53c16f45929ec0ab90229ad, type: 3}
