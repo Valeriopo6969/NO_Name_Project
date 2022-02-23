@@ -44,6 +44,18 @@ public class Controller : MonoBehaviour
 
     void Move()
     {
+        var x = InputManager.HORIZONTALMOVE;
+        var z = InputManager.VERTICALMOVE;
 
+        Vector3 moveDirection = new Vector3(x, 0, z);
+        //transform.rotation = Quaternion.LookRotation(moveDirection);
+
+        rb.velocity = moveDirection.normalized * moveSpeed;
+        Animator.SetFloat("Speed", rb.velocity.magnitude); 
+
+        if(InputManager.JUMPBUTTON)
+        {
+            rb.velocity = Vector3.up * JumpForce;
+        }
     }
 }
