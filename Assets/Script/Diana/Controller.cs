@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-    public Animator Animator;
+    //public Animator Animator;
     public float moveSpeed = 2;
-    public float jumpForce = 2;
+    public float jumpForce = 6;
     public float rotationBoost = 1;
-    public PoolManager PoolMng;
+    //public PoolManager PoolMng;
     
     GameObject SpawnPoint;
     float modVal = 1f;
-    private Rigidbody2D rb;
+    private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
         //SpawnPoint = GameObject.Find("SpawnPoint");
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -51,11 +51,13 @@ public class Controller : MonoBehaviour
         //transform.rotation = Quaternion.LookRotation(moveDirection);
 
         rb.velocity = moveDirection.normalized * moveSpeed;
-        Animator.SetFloat("Speed", rb.velocity.magnitude); 
+        //Animator.SetFloat("Speed", rb.velocity.magnitude); 
 
         if(InputManager.JUMPBUTTON)
         {
-            rb.velocity = Vector3.up * JumpForce;
+            rb.velocity = Vector3.up * jumpForce;
         }
+
+        Debug.Log(rb.velocity);
     }
 }

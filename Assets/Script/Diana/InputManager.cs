@@ -33,7 +33,7 @@ public class InputManager : MonoBehaviour
     void Update()
     {
         HORIZONTALMOVE = playerControls.GetAxisRaw(horizontalMoveName);
-        HORIZONTALMOVE = playerControls.GetAxisRaw(horizontalMoveName);
+        VERTICALMOVE = playerControls.GetAxisRaw(verticalMoveName);
 
         JUMPBUTTON = playerControls.GetButtonDown(jumpButtonName);
     }
