@@ -47,17 +47,14 @@ public class Controller : MonoBehaviour
         var x = InputManager.HORIZONTALMOVE;
         var z = InputManager.VERTICALMOVE;
 
-        Vector3 moveDirection = new Vector3(x, 0, z);
-        //transform.rotation = Quaternion.LookRotation(moveDirection);
-
+        Vector3 moveDirection = new Vector3(x, 0, z).normalized;        
+        
         rb.velocity = moveDirection.normalized * moveSpeed;
         //Animator.SetFloat("Speed", rb.velocity.magnitude); 
 
         if(InputManager.JUMPBUTTON)
         {
             rb.velocity = Vector3.up * jumpForce;
-        }
-
-        Debug.Log(rb.velocity);
+        }      
     }
 }
